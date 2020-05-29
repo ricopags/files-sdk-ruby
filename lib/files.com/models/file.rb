@@ -392,10 +392,10 @@ module Files
                      r, w = IO.pipe
                      Thread.new do
                        download_content(w)
-                     ensure
-                       w.close
                      end
                      r
+                    ensure
+                      w.close
                    end
     end
 
